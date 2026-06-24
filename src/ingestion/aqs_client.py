@@ -53,7 +53,7 @@ def _get(session: requests.Session, endpoint: str, params: dict) -> dict:
     wait = _BACKOFF_BASE
     for attempt in range(1, _MAX_RETRIES + 1):
         try:
-            resp = session.get(url, params=params, timeout=60)
+            resp = session.get(url, params=params, timeout=120)
         except requests.RequestException as exc:
             if attempt == _MAX_RETRIES:
                 raise
@@ -83,11 +83,21 @@ def _get(session: requests.Session, endpoint: str, params: dict) -> dict:
         resp.raise_for_status()
         payload = resp.json()
 
-        # AQS wraps errors in the JSON body with a non-zero "status" field
+        # AQS wraps errors/empty results in the JSON body
         header = payload.get("Header", [{}])[0]
         status = header.get("status", "Success")
+
+        # "No data matched" is not an error — the county just has no monitors
         if status != "Success":
-            msg = header.get("error", header.get("message", "unknown AQS error"))
+            msg = header.get("error", header.get("message", status))
+            no_data_phrases = ("no data", "no matching data", "no results")
+            if any(p in msg.lower() for p in no_data_phrases) or any(
+                p in status.lower() for p in no_data_phrases
+            ):
+                log.debug("No data for this query: %s", msg)
+                payload.setdefault("Data", [])
+                return payload
+            log.error("AQS header: %s", header)
             raise RuntimeError(f"AQS API error: {msg}")
 
         return payload
@@ -204,17 +214,30 @@ class AQSClient:
         ]
         total = len(combos)
 
+        skipped: list[str] = []
+
         for idx, (param, state, county, bdate, edate) in enumerate(combos, 1):
             log.info(
                 "[%d/%d] %s  state=%s county=%s  %s→%s",
                 idx, total, PARAMETERS[param], state, county, bdate, edate,
             )
-            rows = self._hourly_by_county(param, state, county, bdate, edate)
+            try:
+                rows = self._hourly_by_county(param, state, county, bdate, edate)
+            except RuntimeError as exc:
+                label = f"{PARAMETERS[param]} state={state} county={county} {bdate}→{edate}"
+                log.warning("Skipping %s — %s", label, exc)
+                skipped.append(label)
+                rows = []
+
             all_rows.extend(rows)
             log.info("  → %d rows (running total: %d)", len(rows), len(all_rows))
 
             if idx < total:
                 time.sleep(inter_request_delay)
+
+        if skipped:
+            log.warning("%d combos skipped due to API errors:\n  %s",
+                        len(skipped), "\n  ".join(skipped))
 
         if not all_rows:
             return pd.DataFrame()

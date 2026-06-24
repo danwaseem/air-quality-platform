@@ -1,0 +1,42 @@
+# .gcloudignore — controls what gcloud builds submit uploads to Cloud Build.
+# When this file exists, gcloud uses it instead of .gitignore.
+# We mirror .gitignore but carve out the GBM model files needed by the build.
+
+# ── Python ────────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+*.egg
+dist/
+build/
+
+# ── Virtual environments / secrets ───────────────────────────────────────────
+.env
+.venv/
+env/
+venv/
+
+# ── Data (large, not needed in Cloud Build) ──────────────────────────────────
+data/
+
+# ── Model artifacts — exclude large files, KEEP the small GBM ones ───────────
+models/*.pkl
+models/rf_*.joblib
+# GBM files (~1 MB each) ARE included so the Dockerfile COPY steps succeed:
+# models/gbm_pm25.joblib
+# models/gbm_no2.joblib
+# models/gbm_ozone.joblib
+
+# ── Dev-only ──────────────────────────────────────────────────────────────────
+notebooks/
+.ipynb_checkpoints/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.DS_Store
+
+# ── Logs ─────────────────────────────────────────────────────────────────────
+*.log
+logs/

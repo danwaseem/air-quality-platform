@@ -1,6 +1,6 @@
 [build-system]
 requires = ["setuptools>=68", "wheel"]
-build-backend = "setuptools.backends.legacy:build"
+build-backend = "setuptools.build_meta"
 
 [project]
 name = "air-quality-platform"
@@ -8,9 +8,9 @@ version = "0.1.0"
 description = "Air quality data ingestion, cleaning, feature engineering, and prediction platform"
 requires-python = ">=3.10"
 dependencies = [
-    "pandas>=2.1",
-    "numpy>=1.26",
-    "scikit-learn>=1.4",
+    "pandas>=3.0",
+    "numpy>=2.4",
+    "scikit-learn>=1.9",
     "statsmodels>=0.14",
     "requests>=2.31",
     "python-dotenv>=1.0",

@@ -1,0 +1,13 @@
+pollutant,region,states,mae,rmse,r2,n_test,n_stations
+pm25,Midwest,"Illinois, Ohio",3.9657,5.806,0.0628,31164,20
+pm25,Northeast,"New York, Pennsylvania",4.6673,7.2132,0.0362,25361,17
+pm25,South,"Florida, Georgia, North Carolina, Texas",3.6718,6.8712,0.076,49810,35
+pm25,West,"Arizona, California",5.1629,10.2946,0.1349,51858,36
+no2,Midwest,"Illinois, Ohio",6.028,8.01,0.2516,17395,11
+no2,Northeast,"New York, Pennsylvania",6.7773,9.1653,0.2028,16214,10
+no2,South,"Florida, Georgia, North Carolina, Texas",5.2598,7.308,0.3452,58933,39
+no2,West,"Arizona, California",6.1756,8.29,0.443,69629,43
+ozone,Midwest,"Illinois, Ohio",0.0078,0.0098,0.1567,11971,20
+ozone,Northeast,"New York, Pennsylvania",0.0077,0.0095,0.258,15186,10
+ozone,South,"Florida, Georgia, North Carolina, Texas",0.0075,0.0095,0.4931,83249,48
+ozone,West,"Arizona, California",0.0069,0.0091,0.6834,113288,64

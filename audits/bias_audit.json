@@ -1,0 +1,503 @@
+{
+  "pm25": {
+    "overall": {
+      "mae": 4.3781,
+      "rmse": 8.0367,
+      "r2": 0.1131,
+      "n_test": 158193
+    },
+    "by_state": {
+      "Arizona": {
+        "mae": 5.9061,
+        "rmse": 14.0281,
+        "r2": 0.0807,
+        "n_test": 18185,
+        "region": "West",
+        "n_stations": 12,
+        "flagged": false
+      },
+      "California": {
+        "mae": 4.7616,
+        "rmse": 7.5457,
+        "r2": 0.2138,
+        "n_test": 33673,
+        "region": "West",
+        "n_stations": 24,
+        "flagged": false
+      },
+      "Florida": {
+        "mae": 2.0564,
+        "rmse": 6.6215,
+        "r2": 0.0295,
+        "n_test": 15253,
+        "region": "South",
+        "n_stations": 10,
+        "flagged": false
+      },
+      "Georgia": {
+        "mae": 3.4327,
+        "rmse": 4.9698,
+        "r2": 0.2321,
+        "n_test": 1582,
+        "region": "South",
+        "n_stations": 1,
+        "flagged": false
+      },
+      "Illinois": {
+        "mae": 3.7242,
+        "rmse": 5.2061,
+        "r2": -0.0064,
+        "n_test": 7900,
+        "region": "Midwest",
+        "n_stations": 5,
+        "flagged": false
+      },
+      "New York": {
+        "mae": 4.558,
+        "rmse": 6.392,
+        "r2": -0.0022,
+        "n_test": 6821,
+        "region": "Northeast",
+        "n_stations": 5,
+        "flagged": false
+      },
+      "North Carolina": {
+        "mae": 4.5158,
+        "rmse": 6.4857,
+        "r2": 0.14,
+        "n_test": 6930,
+        "region": "South",
+        "n_stations": 5,
+        "flagged": false
+      },
+      "Ohio": {
+        "mae": 4.0477,
+        "rmse": 5.9961,
+        "r2": 0.0723,
+        "n_test": 23264,
+        "region": "Midwest",
+        "n_stations": 15,
+        "flagged": false
+      },
+      "Pennsylvania": {
+        "mae": 4.7075,
+        "rmse": 7.4927,
+        "r2": 0.0384,
+        "n_test": 18540,
+        "region": "Northeast",
+        "n_stations": 12,
+        "flagged": false
+      },
+      "Texas": {
+        "mae": 4.4078,
+        "rmse": 7.2058,
+        "r2": 0.0341,
+        "n_test": 26045,
+        "region": "South",
+        "n_stations": 19,
+        "flagged": false
+      }
+    },
+    "by_region": {
+      "Midwest": {
+        "mae": 3.9657,
+        "rmse": 5.806,
+        "r2": 0.0628,
+        "n_test": 31164,
+        "n_stations": 20,
+        "states": [
+          "Illinois",
+          "Ohio"
+        ]
+      },
+      "Northeast": {
+        "mae": 4.6673,
+        "rmse": 7.2132,
+        "r2": 0.0362,
+        "n_test": 25361,
+        "n_stations": 17,
+        "states": [
+          "New York",
+          "Pennsylvania"
+        ]
+      },
+      "South": {
+        "mae": 3.6718,
+        "rmse": 6.8712,
+        "r2": 0.076,
+        "n_test": 49810,
+        "n_stations": 35,
+        "states": [
+          "Florida",
+          "Georgia",
+          "North Carolina",
+          "Texas"
+        ]
+      },
+      "West": {
+        "mae": 5.1629,
+        "rmse": 10.2946,
+        "r2": 0.1349,
+        "n_test": 51858,
+        "n_stations": 36,
+        "states": [
+          "Arizona",
+          "California"
+        ]
+      }
+    },
+    "disparity": {
+      "best_state": "Florida",
+      "best_state_mae": 2.0564,
+      "worst_state": "Arizona",
+      "worst_state_mae": 5.9061,
+      "state_mae_ratio": 2.87,
+      "best_region": "South",
+      "best_region_mae": 3.6718,
+      "worst_region": "West",
+      "worst_region_mae": 5.1629,
+      "region_mae_ratio": 1.41,
+      "flagged_states": [],
+      "flag_threshold_ratio": 1.5,
+      "spearman_n_vs_mae": {
+        "rho": 0.382,
+        "p_val": 0.2763,
+        "interpretation": "moderate positive correlation (not significant at p<0.05)"
+      }
+    }
+  },
+  "no2": {
+    "overall": {
+      "mae": 5.8871,
+      "rmse": 8.0122,
+      "r2": 0.4008,
+      "n_test": 162171
+    },
+    "by_state": {
+      "Arizona": {
+        "mae": 6.1338,
+        "rmse": 8.239,
+        "r2": 0.4487,
+        "n_test": 13731,
+        "region": "West",
+        "n_stations": 9,
+        "flagged": false
+      },
+      "California": {
+        "mae": 6.1858,
+        "rmse": 8.3025,
+        "r2": 0.4386,
+        "n_test": 55898,
+        "region": "West",
+        "n_stations": 34,
+        "flagged": false
+      },
+      "Florida": {
+        "mae": 4.4037,
+        "rmse": 6.4419,
+        "r2": 0.3494,
+        "n_test": 10721,
+        "region": "South",
+        "n_stations": 7,
+        "flagged": false
+      },
+      "Georgia": {
+        "mae": 5.4245,
+        "rmse": 7.0242,
+        "r2": 0.3205,
+        "n_test": 4493,
+        "region": "South",
+        "n_stations": 3,
+        "flagged": false
+      },
+      "Illinois": {
+        "mae": 6.7141,
+        "rmse": 8.7801,
+        "r2": 0.0861,
+        "n_test": 8092,
+        "region": "Midwest",
+        "n_stations": 5,
+        "flagged": false
+      },
+      "New York": {
+        "mae": 8.1142,
+        "rmse": 10.9203,
+        "r2": 0.0048,
+        "n_test": 6131,
+        "region": "Northeast",
+        "n_stations": 4,
+        "flagged": false
+      },
+      "North Carolina": {
+        "mae": 5.1226,
+        "rmse": 6.8208,
+        "r2": 0.3186,
+        "n_test": 6553,
+        "region": "South",
+        "n_stations": 4,
+        "flagged": false
+      },
+      "Ohio": {
+        "mae": 5.4312,
+        "rmse": 7.2741,
+        "r2": 0.2902,
+        "n_test": 9303,
+        "region": "Midwest",
+        "n_stations": 6,
+        "flagged": false
+      },
+      "Pennsylvania": {
+        "mae": 5.9643,
+        "rmse": 7.91,
+        "r2": 0.2403,
+        "n_test": 10083,
+        "region": "Northeast",
+        "n_stations": 6,
+        "flagged": false
+      },
+      "Texas": {
+        "mae": 5.511,
+        "rmse": 7.6516,
+        "r2": 0.3348,
+        "n_test": 37166,
+        "region": "South",
+        "n_stations": 25,
+        "flagged": false
+      }
+    },
+    "by_region": {
+      "Midwest": {
+        "mae": 6.028,
+        "rmse": 8.01,
+        "r2": 0.2516,
+        "n_test": 17395,
+        "n_stations": 11,
+        "states": [
+          "Illinois",
+          "Ohio"
+        ]
+      },
+      "Northeast": {
+        "mae": 6.7773,
+        "rmse": 9.1653,
+        "r2": 0.2028,
+        "n_test": 16214,
+        "n_stations": 10,
+        "states": [
+          "New York",
+          "Pennsylvania"
+        ]
+      },
+      "South": {
+        "mae": 5.2598,
+        "rmse": 7.308,
+        "r2": 0.3452,
+        "n_test": 58933,
+        "n_stations": 39,
+        "states": [
+          "Florida",
+          "Georgia",
+          "North Carolina",
+          "Texas"
+        ]
+      },
+      "West": {
+        "mae": 6.1756,
+        "rmse": 8.29,
+        "r2": 0.443,
+        "n_test": 69629,
+        "n_stations": 43,
+        "states": [
+          "Arizona",
+          "California"
+        ]
+      }
+    },
+    "disparity": {
+      "best_state": "Florida",
+      "best_state_mae": 4.4037,
+      "worst_state": "New York",
+      "worst_state_mae": 8.1142,
+      "state_mae_ratio": 1.84,
+      "best_region": "South",
+      "best_region_mae": 5.2598,
+      "worst_region": "Northeast",
+      "worst_region_mae": 6.7773,
+      "region_mae_ratio": 1.29,
+      "flagged_states": [],
+      "flag_threshold_ratio": 1.5,
+      "spearman_n_vs_mae": {
+        "rho": 0.079,
+        "p_val": 0.8287,
+        "interpretation": "weak positive correlation (not significant at p<0.05)"
+      }
+    }
+  },
+  "ozone": {
+    "overall": {
+      "mae": 0.0072,
+      "rmse": 0.0093,
+      "r2": 0.599,
+      "n_test": 223694
+    },
+    "by_state": {
+      "Arizona": {
+        "mae": 0.0065,
+        "rmse": 0.0087,
+        "r2": 0.6868,
+        "n_test": 55380,
+        "region": "West",
+        "n_stations": 31,
+        "flagged": false
+      },
+      "California": {
+        "mae": 0.0073,
+        "rmse": 0.0095,
+        "r2": 0.6724,
+        "n_test": 57908,
+        "region": "West",
+        "n_stations": 33,
+        "flagged": false
+      },
+      "Florida": {
+        "mae": 0.0071,
+        "rmse": 0.0089,
+        "r2": 0.3838,
+        "n_test": 21181,
+        "region": "South",
+        "n_stations": 12,
+        "flagged": false
+      },
+      "Georgia": {
+        "mae": 0.0075,
+        "rmse": 0.0094,
+        "r2": 0.5781,
+        "n_test": 2238,
+        "region": "South",
+        "n_stations": 2,
+        "flagged": false
+      },
+      "Illinois": {
+        "mae": 0.0078,
+        "rmse": 0.0096,
+        "r2": 0.0975,
+        "n_test": 5664,
+        "region": "Midwest",
+        "n_stations": 11,
+        "flagged": false
+      },
+      "New York": {
+        "mae": 0.0082,
+        "rmse": 0.01,
+        "r2": 0.0158,
+        "n_test": 4363,
+        "region": "Northeast",
+        "n_stations": 4,
+        "flagged": false
+      },
+      "North Carolina": {
+        "mae": 0.0077,
+        "rmse": 0.0096,
+        "r2": 0.5221,
+        "n_test": 4016,
+        "region": "South",
+        "n_stations": 3,
+        "flagged": false
+      },
+      "Ohio": {
+        "mae": 0.0079,
+        "rmse": 0.0099,
+        "r2": 0.1819,
+        "n_test": 6307,
+        "region": "Midwest",
+        "n_stations": 9,
+        "flagged": false
+      },
+      "Pennsylvania": {
+        "mae": 0.0075,
+        "rmse": 0.0092,
+        "r2": 0.3255,
+        "n_test": 10823,
+        "region": "Northeast",
+        "n_stations": 6,
+        "flagged": false
+      },
+      "Texas": {
+        "mae": 0.0077,
+        "rmse": 0.0097,
+        "r2": 0.4427,
+        "n_test": 55814,
+        "region": "South",
+        "n_stations": 31,
+        "flagged": false
+      }
+    },
+    "by_region": {
+      "Midwest": {
+        "mae": 0.0078,
+        "rmse": 0.0098,
+        "r2": 0.1567,
+        "n_test": 11971,
+        "n_stations": 20,
+        "states": [
+          "Illinois",
+          "Ohio"
+        ]
+      },
+      "Northeast": {
+        "mae": 0.0077,
+        "rmse": 0.0095,
+        "r2": 0.258,
+        "n_test": 15186,
+        "n_stations": 10,
+        "states": [
+          "New York",
+          "Pennsylvania"
+        ]
+      },
+      "South": {
+        "mae": 0.0075,
+        "rmse": 0.0095,
+        "r2": 0.4931,
+        "n_test": 83249,
+        "n_stations": 48,
+        "states": [
+          "Florida",
+          "Georgia",
+          "North Carolina",
+          "Texas"
+        ]
+      },
+      "West": {
+        "mae": 0.0069,
+        "rmse": 0.0091,
+        "r2": 0.6834,
+        "n_test": 113288,
+        "n_stations": 64,
+        "states": [
+          "Arizona",
+          "California"
+        ]
+      }
+    },
+    "disparity": {
+      "best_state": "Arizona",
+      "best_state_mae": 0.0065,
+      "worst_state": "New York",
+      "worst_state_mae": 0.0082,
+      "state_mae_ratio": 1.26,
+      "best_region": "West",
+      "best_region_mae": 0.0069,
+      "worst_region": "Midwest",
+      "worst_region_mae": 0.0078,
+      "region_mae_ratio": 1.13,
+      "flagged_states": [],
+      "flag_threshold_ratio": 1.5,
+      "spearman_n_vs_mae": {
+        "rho": -0.494,
+        "p_val": 0.1468,
+        "interpretation": "moderate negative correlation (not significant at p<0.05)"
+      }
+    }
+  }
+}

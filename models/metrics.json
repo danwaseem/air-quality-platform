@@ -1,0 +1,62 @@
+{
+  "pm25": {
+    "GradientBoosting": {
+      "mae": 4.3781,
+      "rmse": 8.0367,
+      "r2": 0.1131,
+      "n_test": 158193
+    },
+    "RandomForest": {
+      "mae": 4.6463,
+      "rmse": 7.8765,
+      "r2": 0.1448,
+      "n_test": 159690
+    },
+    "ARIMA": {
+      "mae": 3.6333,
+      "rmse": 5.0677,
+      "r2": -0.0019,
+      "n_test": 1606
+    }
+  },
+  "no2": {
+    "GradientBoosting": {
+      "mae": 5.8871,
+      "rmse": 8.0122,
+      "r2": 0.4008,
+      "n_test": 162171
+    },
+    "RandomForest": {
+      "mae": 6.143,
+      "rmse": 8.0738,
+      "r2": 0.3916,
+      "n_test": 162171
+    },
+    "ARIMA": {
+      "mae": 4.877,
+      "rmse": 6.2235,
+      "r2": -0.0018,
+      "n_test": 1736
+    }
+  },
+  "ozone": {
+    "GradientBoosting": {
+      "mae": 0.0072,
+      "rmse": 0.0093,
+      "r2": 0.599,
+      "n_test": 223694
+    },
+    "RandomForest": {
+      "mae": 0.0075,
+      "rmse": 0.0094,
+      "r2": 0.5951,
+      "n_test": 223694
+    },
+    "ARIMA": {
+      "mae": 0.0224,
+      "rmse": 0.0253,
+      "r2": -3.0465,
+      "n_test": 1879
+    }
+  }
+}

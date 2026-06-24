@@ -1,0 +1,79 @@
+{
+  "config": {
+    "baseline_features": 17,
+    "augmented_features": 20,
+    "added_features": [
+      "temperature_2m",
+      "wind_speed_10m",
+      "relative_humidity_2m"
+    ],
+    "baseline_data": "data/processed/clean_hourly.parquet",
+    "augmented_data": "data/processed/clean_hourly_weather.parquet",
+    "seed": 42,
+    "test_fraction": 0.2,
+    "improve_threshold_pct": 0.5,
+    "note": "Rows with null weather (~0.55%) are dropped before training. n_test difference reflects this smaller effective dataset. Same time-based cutoff logic ensures temporal comparability."
+  },
+  "pollutants": {
+    "pm25": {
+      "baseline": {
+        "mae": 4.4803,
+        "rmse": 8.0972,
+        "r2": 0.0962,
+        "n_test": 159690
+      },
+      "augmented": {
+        "mae": 4.3781,
+        "rmse": 8.0367,
+        "r2": 0.1131,
+        "n_test": 158193
+      },
+      "delta": {
+        "mae": -0.1022,
+        "rmse": -0.0605,
+        "r2": 0.0169
+      },
+      "verdict": "improved"
+    },
+    "no2": {
+      "baseline": {
+        "mae": 6.0942,
+        "rmse": 8.3153,
+        "r2": 0.3546,
+        "n_test": 162171
+      },
+      "augmented": {
+        "mae": 5.8871,
+        "rmse": 8.0122,
+        "r2": 0.4008,
+        "n_test": 162171
+      },
+      "delta": {
+        "mae": -0.2071,
+        "rmse": -0.3031,
+        "r2": 0.0462
+      },
+      "verdict": "improved"
+    },
+    "ozone": {
+      "baseline": {
+        "mae": 0.0073,
+        "rmse": 0.0093,
+        "r2": 0.5974,
+        "n_test": 223694
+      },
+      "augmented": {
+        "mae": 0.0072,
+        "rmse": 0.0093,
+        "r2": 0.599,
+        "n_test": 223694
+      },
+      "delta": {
+        "mae": -0.0001,
+        "rmse": 0.0,
+        "r2": 0.0016
+      },
+      "verdict": "improved"
+    }
+  }
+}

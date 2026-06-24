@@ -1,0 +1,96 @@
+{
+  "config": {
+    "n_runs": 3,
+    "seed": 42,
+    "models_trained": [
+      "GradientBoosting"
+    ],
+    "pollutants": [
+      "pm25",
+      "no2",
+      "ozone"
+    ],
+    "raw_chunk_files": 89,
+    "notes": "RF (200 trees \u00d7 3 pollutants \u2248 15 min/run) excluded to avoid train time dominating both paths equally and washing out the pipeline savings signal.  GBM train times are nearly identical between paths (same data, same seed); measured differences reflect OS scheduling noise.  Savings come entirely from skipping load+clean+features."
+  },
+  "naive": {
+    "description": "raw chunks \u2192 pd.concat \u2192 normalize_schema \u2192 fill_gaps \u2192 flag_outliers \u2192 build_all_features \u00d7 3 \u2192 GBM fit \u00d7 3",
+    "runs": [
+      {
+        "load": 0.339,
+        "clean": 4.613,
+        "features": 1.554,
+        "train": 15.728,
+        "total": 22.234
+      },
+      {
+        "load": 0.33,
+        "clean": 4.612,
+        "features": 1.635,
+        "train": 15.466,
+        "total": 22.043
+      },
+      {
+        "load": 0.298,
+        "clean": 4.653,
+        "features": 1.652,
+        "train": 15.333,
+        "total": 21.937
+      }
+    ],
+    "average": {
+      "load": 0.322,
+      "clean": 4.626,
+      "features": 1.614,
+      "train": 15.509,
+      "total": 22.071
+    },
+    "total_stdev_s": 0.123
+  },
+  "modular": {
+    "description": "pd.read_parquet(feature_cache) \u00d7 3 \u2192 GBM fit \u00d7 3 (clean + feature stages skipped \u2014 intermediate artifacts on disk)",
+    "runs": [
+      {
+        "load": 0.085,
+        "clean": 0.0,
+        "features": 0.0,
+        "train": 15.19,
+        "total": 15.275
+      },
+      {
+        "load": 0.071,
+        "clean": 0.0,
+        "features": 0.0,
+        "train": 15.183,
+        "total": 15.254
+      },
+      {
+        "load": 0.046,
+        "clean": 0.0,
+        "features": 0.0,
+        "train": 15.262,
+        "total": 15.308
+      }
+    ],
+    "average": {
+      "load": 0.067,
+      "clean": 0.0,
+      "features": 0.0,
+      "train": 15.212,
+      "total": 15.279
+    },
+    "total_stdev_s": 0.022
+  },
+  "summary": {
+    "naive_total_avg_s": 22.071,
+    "modular_total_avg_s": 15.279,
+    "time_saved_avg_s": 6.792,
+    "wall_clock_reduction_pct": 30.8,
+    "breakdown": {
+      "load_saved_s": 0.255,
+      "clean_saved_s": 4.626,
+      "features_saved_s": 1.614,
+      "train_delta_s": 0.297
+    }
+  }
+}

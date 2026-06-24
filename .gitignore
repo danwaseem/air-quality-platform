@@ -59,10 +59,12 @@ Thumbs.db
 *.log
 logs/
 
-# Model artifacts
-*.pkl
-*.joblib
-*.h5
+# Model artifacts (binary — tracked separately via DVC or S3)
+models/*.pkl
+models/*.joblib
+# But DO track metrics and card
+!models/metrics.json
+!models/model_card.md
 
 # Distribution / packaging
 *.tar.gz

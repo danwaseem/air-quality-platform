@@ -1,0 +1,10 @@
+pollutant,model,mae,rmse,r2,n_test
+pm25,GradientBoosting,4.3781,8.0367,0.1131,158193
+pm25,RandomForest,4.6463,7.8765,0.1448,159690
+pm25,ARIMA,3.6333,5.0677,-0.0019,1606
+no2,GradientBoosting,5.8871,8.0122,0.4008,162171
+no2,RandomForest,6.143,8.0738,0.3916,162171
+no2,ARIMA,4.877,6.2235,-0.0018,1736
+ozone,GradientBoosting,0.0072,0.0093,0.599,223694
+ozone,RandomForest,0.0075,0.0094,0.5951,223694
+ozone,ARIMA,0.0224,0.0253,-3.0465,1879

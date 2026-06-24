@@ -1,0 +1,33 @@
+# ── Raw / processed data ──────────────────────────────────────────────────────
+data/
+*.parquet
+
+# ── Large model artifacts not needed for serving ──────────────────────────────
+# RF models are 900 MB–1.2 GB each; ARIMA models are 25 MB each.
+# Only GBM files (~1 MB) are COPY'd explicitly in the Dockerfile.
+models/rf_*.joblib
+models/arima_*.pkl
+
+# ── Dev environment ───────────────────────────────────────────────────────────
+.venv/
+.env
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# ── Dev-only directories ──────────────────────────────────────────────────────
+notebooks/
+tests/
+docs/
+scripts/
+
+# ── Git ───────────────────────────────────────────────────────────────────────
+.git/
+.gitignore
+
+# ── Build artifacts ───────────────────────────────────────────────────────────
+dist/
+*.egg-info/

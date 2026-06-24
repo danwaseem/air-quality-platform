@@ -1,0 +1,31 @@
+pollutant,state,region,mae,rmse,r2,n_test,n_stations,flagged
+pm25,Arizona,West,5.9061,14.0281,0.0807,18185,12,False
+pm25,California,West,4.7616,7.5457,0.2138,33673,24,False
+pm25,Florida,South,2.0564,6.6215,0.0295,15253,10,False
+pm25,Georgia,South,3.4327,4.9698,0.2321,1582,1,False
+pm25,Illinois,Midwest,3.7242,5.2061,-0.0064,7900,5,False
+pm25,New York,Northeast,4.558,6.392,-0.0022,6821,5,False
+pm25,North Carolina,South,4.5158,6.4857,0.14,6930,5,False
+pm25,Ohio,Midwest,4.0477,5.9961,0.0723,23264,15,False
+pm25,Pennsylvania,Northeast,4.7075,7.4927,0.0384,18540,12,False
+pm25,Texas,South,4.4078,7.2058,0.0341,26045,19,False
+no2,Arizona,West,6.1338,8.239,0.4487,13731,9,False
+no2,California,West,6.1858,8.3025,0.4386,55898,34,False
+no2,Florida,South,4.4037,6.4419,0.3494,10721,7,False
+no2,Georgia,South,5.4245,7.0242,0.3205,4493,3,False
+no2,Illinois,Midwest,6.7141,8.7801,0.0861,8092,5,False
+no2,New York,Northeast,8.1142,10.9203,0.0048,6131,4,False
+no2,North Carolina,South,5.1226,6.8208,0.3186,6553,4,False
+no2,Ohio,Midwest,5.4312,7.2741,0.2902,9303,6,False
+no2,Pennsylvania,Northeast,5.9643,7.91,0.2403,10083,6,False
+no2,Texas,South,5.511,7.6516,0.3348,37166,25,False
+ozone,Arizona,West,0.0065,0.0087,0.6868,55380,31,False
+ozone,California,West,0.0073,0.0095,0.6724,57908,33,False
+ozone,Florida,South,0.0071,0.0089,0.3838,21181,12,False
+ozone,Georgia,South,0.0075,0.0094,0.5781,2238,2,False
+ozone,Illinois,Midwest,0.0078,0.0096,0.0975,5664,11,False
+ozone,New York,Northeast,0.0082,0.01,0.0158,4363,4,False
+ozone,North Carolina,South,0.0077,0.0096,0.5221,4016,3,False
+ozone,Ohio,Midwest,0.0079,0.0099,0.1819,6307,9,False
+ozone,Pennsylvania,Northeast,0.0075,0.0092,0.3255,10823,6,False
+ozone,Texas,South,0.0077,0.0097,0.4427,55814,31,False
