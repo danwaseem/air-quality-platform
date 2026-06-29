@@ -11,7 +11,7 @@ Predicts 24-hour-ahead concentrations of **PM2.5**, **NO2**, and **ozone** for a
 | Resource | Link |
 |---|---|
 | Prediction API (Cloud Run) | _coming soon_ |
-| Tableau Public Dashboard | _coming soon_ |
+| Tableau Public Dashboard | [Tableau Link] (https://public.tableau.com/views/USAirQualityTrends2023/U_S_AirQualityTrends2023EPAMonitoringNetwork?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link) |
 
 ---
 
